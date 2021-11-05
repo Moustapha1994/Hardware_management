@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block title %} About {% endblock title %}
+
+
+{% block content %}
+    
+    {% if not user.is_authenticated  %}
+        <br>
+        <a href="{% url 'home' %}" class="btn ghost-button">Retour</a>
+    {% endif %}    
+    
+    <div class="align-middle" style="color: #ea2088; font-style: bold; font-size: 3rem;">GestionStock</div>
+    <div class="align-middle" style="color: #fff">Un Système De Gestion Des Stocks</div>
+    <br><br>
+
+    <div class="align-middle"> 
+        <h2 style="color:#ea2088">| About |</h3> <br>
+            <p>
+                GestionStock est un logiciel simple de gestion des stocks créé pour les besoins d'une entreprise.
+                Le logiciel est capable de suivre le stock entrant et sortant avec une facture rendue dynamiquement. 
+                Chaque fournisseur reçoit un profil où il peut voir l'historique de ses transactions avec l'entreprise.
+            </p>
+        <br>
+    </div>
+        <h2 style="color:#ea2088" class="align-middle">| Caractéristiques |</h3> <br>
+            <ul style="display:table; margin:0 auto;">                
+                <li>Graphique interactif pour afficher les stocks disponibles actuels</li>
+                <li>Les détails des stocks comme les stocks disponibles actuels sont maintenus</li>
+                <li>Les transactions entrantes se font par le biais d'achats</li>
+                <li>Les transactions sortantes sont effectuées via des ventes</li>
+                <li>Chaque transaction effectuée via le logiciel est enregistrée</li>
+                <li>Une facture est rendue dynamiquement et peut être imprimé</li>
+                <li>Des profils séparés sont maintenus pour les fournisseurs</li>
+            </ul>  
+        <br>
+    <div class="align-middle">
+        <h2 style="color:#ea2088" >| Développeur |</h3> <br>
+            <a target="_blank" href="https://github.com/Moustapha1994" >Amdy Moustapha DRAME</a>
+            <br><br><br>
+    </div>
+
+{% endblock content %}

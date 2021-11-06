@@ -55,21 +55,8 @@
                                     </tr>
                                     <tr>
                                         <td class="inner-box" style="width: 50%;" rowspan="3">{{ bill.supplier.address|linebreaks }}</td>
-                                        <td class="inner-box" style="width: 25%; font-weight: bold;">&nbsp;EWAY NO</td>
-                                        <td class="inner-box align-middle" style="width: 25%;"> <input type="text" name="eway" class="align-middle" style="border: 0; overflow: hidden;" value="{% if billdetails.eway %}{{ billdetails.eway }}{% endif %}"> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="inner-box" style="width: 25%; font-weight: bold;">&nbsp;VEH NO</td>
-                                        <td class="inner-box align-middle" style="width: 25%;"> <input type="text" name="veh" class="align-middle" style="border: 0; overflow: hidden;" value="{% if billdetails.veh %}{{ billdetails.veh }}{% endif %}"> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="inner-box" style="width: 25%; font-weight: bold;">&nbsp;DESTINATION</td>
-                                        <td class="inner-box align-middle" style="width: 25%;"> <input type="text" name="destination" class="align-middle" style="border: 0; overflow: hidden;" value="{% if billdetails.destination %}{{ billdetails.destination }}{% endif %}"> </td>
-                                    </tr>
-                                    <tr>
                                         <td class="inner-box" style="font-weight: bold;">&nbsp;GSTIN No : {{ bill.supplier.gstin }}</td>
-                                        <td class="inner-box" style="width: 25%; font-weight: bold;">&nbsp;PO NO &amp; DATE</td>
-                                        <td class="inner-box align-middle" style="width: 25%;"> <input type="text" name="po" class="align-middle" style="border: 0; overflow: hidden;" value="{% if billdetails.po %}{{ billdetails.po }}{% endif %}"> </td>
+                                        
                                     </tr>
                                 </tbody>
                             </table>
@@ -81,23 +68,23 @@
                             <table class="outer-box" style="width: auto; margin-left: auto; margin-right: auto;">
                                 <tbody>
                                     <tr>
-                                        <td class="inner-box" style="width: 05%; font-weight: bold; text-align: center;">&nbsp;SL NO</td>
-                                        <td class="inner-box" style="width: 30%; font-weight: bold; text-align: center;">DESCRIPTION OF THE GOODS</td>
-                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">&nbsp;HSN/SAC</td>
-                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">QTY MTS</td>
-                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">RATE PMT</td>
-                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">AMOUNT INRS</td>
-                                        <td class="inner-box" style="width: 05%; font-weight: bold; text-align: center;">PS</td>
+                                        <td class="inner-box" style="width: 05%; font-weight: bold; text-align: center;">&nbsp;No Série</td>
+                                        <td class="inner-box" style="width: 30%; font-weight: bold; text-align: center;">DESCRIPTION </td>
+                                        
+                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">QUANTITE</td>
+                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">PRIX UNITAIRE</td>
+                                        <td class="inner-box" style="width: 12%; font-weight: bold; text-align: center;">MONTANT</td>
+                                        
                                     </tr>
                                     {% for item in items %}
                                         <tr style="height: auto;">
                                             <td class="inner-box" style="width: 5%;">&nbsp; {{ forloop.counter }}</td>
                                             <td class="inner-box" style="width: 30%;">&nbsp; {{ item.stock.name }}</td>
-                                            <td class="inner-box" style="width: 12%;">&nbsp;</td>
+                                           
                                             <td class="inner-box" style="width: 12%;">&nbsp; {{ item.quantity }}</td>
                                             <td class="inner-box" style="width: 12%;">&nbsp; {{ item.perprice }}</td>
                                             <td class="inner-box" style="width: 12%;">&nbsp;{{ item.totalprice }}</td>
-                                            <td class="inner-box" style="width: 5%;">&nbsp;0</td>
+                                            
                                         </tr>
                                     {% endfor %}
                                 </tbody>
@@ -110,7 +97,6 @@
                             <table class="outer-box inner-box" style="width: 800px; margin-left: auto; margin-right: auto;">
                                 <tbody>
                                     
-                                    
                                     <tr>
                                         <td class="inner-box" style="font-weight: bold;">&nbsp;TOTAL</td>
                                         <td class="inner-box align-middle">&nbsp;<b><font size="12">{{ bill.get_total_price }}</font></b> <input type="text" name="total" class="align-middle" pattern="[0-9]+\.[0-9]+" style="border: 0; overflow: hidden;" value="{% if billdetails.total %}{{ billdetails.total }}{% endif %}"> </td>
@@ -122,7 +108,7 @@
 
                         <tr>
                             <td style="text-align: right;">
-                                <span style="font-weight: bold;">FOR COMPANY <br><br><br><br> Signature</span>
+                                <span style="font-weight: bold;">Pour DMS-NTECH <br><br><br><br> Signature</span>
                             </td>
                         </tr>
 
